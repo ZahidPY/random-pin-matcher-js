@@ -17,6 +17,7 @@ body {
 }
 .generate-btn{
     margin-top: 140px;
+    height: 180px;
     width: 180px;
     padding: 50px;
     border-radius: 50%;
@@ -109,7 +110,7 @@ color: #E0B612;
 .plus {
     position: relative;
     z-index: 1;
-    border-radius: 50%;
+
     border: none;
     transition: box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1), transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
 }

@@ -1,5 +1,6 @@
         document.getElementById("notMatch").style.display = "none";
         document.getElementById("match").style.display = "none";
+        document.getElementById("generate-first").style.display = "none";
         document.getElementById("generatePinDisplay").style.textAlign = "center";
         document.getElementById("enterPinDisplay").style.textAlign = "center";
 
@@ -60,6 +61,7 @@
 
               document.getElementById("match").style.display = "none";
               document.getElementById("notMatch").style.display = "none";
+              document.getElementById("generate-first").style.display = "none";
         })
 
         document.getElementById('backSpace').addEventListener('click', function(){
@@ -69,29 +71,41 @@
             
             document.getElementById("match").style.display = "none";
             document.getElementById("notMatch").style.display = "none";
+            document.getElementById("generate-first").style.display = "none";
         })
         
         
         
-        //submit area
+      //   submit area
+        
         document.getElementById('submit').addEventListener('click', function(){
             const pinGenerate = document.getElementById('generatePinDisplay').value;
             const enterPin = document.getElementById('enterPinDisplay').value;
-            if(pinGenerate == enterPin){
+            if( pinGenerate == ""){
+                  document.getElementById("notMatch").style.display = "none";
+                  document.getElementById("match").style.display = "none";
+                  document.getElementById("generate-first").style.display = "inline-block"; 
+                }   
+            else if(pinGenerate == enterPin){
                 document.getElementById("match").style.display = "inline-block";
                 document.getElementById("notMatch").style.display = "none";
+                document.getElementById("generate-first").style.display = "none";
             }
             else{
                 document.getElementById("notMatch").style.display = "inline-block";
                 document.getElementById("match").style.display = "none";
+                document.getElementById("generate-first").style.display = "none";
+
+                // try handling
                 const tryValue = document.getElementById("try").innerText;
                 const decreaseValue = tryValue - 1;
                 document.getElementById("try").innerText = decreaseValue;
-                if(decreaseValue == 0){
+                if(decreaseValue == 0 ){
                     document.getElementById('submit').disabled = true;
                     document.getElementById('submit').style.backgroundColor = "#3D4153";
                     document.getElementById('submit').style.color = "#ccc";
                     document.getElementById('submit').classList.remove("btn-animate");
                 }
+                
             }
         })
